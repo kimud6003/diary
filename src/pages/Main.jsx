@@ -21,18 +21,22 @@ const payload = {
   image_type: '',
 };
 
-const url = 'https://api.mydiary.iste/users/signin';
-const cloudLogin = async () => {
-  const test = await axios.post(url, payload, { withCredentials: true });
+const url = 'https://api.mydiary.iste/users/';
+const Login = async () => {
+  const test = await axios.post(`${url}signin`, payload, {
+    withCredentials: true,
+  });
   console.log(test);
 };
 
-const localSignup = async () => {
-  const test = await axios.post(url, payload, { withCredentials: true });
+const Signup = async () => {
+  const test = await axios.post(`${url}signup`, payload, {
+    withCredentials: true,
+  });
   console.log(test);
 };
 
-const cookieRemove = async () => {
+const Remove = async () => {
   const res = cookies.remove('Refresh', {
     path: '/',
     domain: 'mydiary.iste',
@@ -45,13 +49,13 @@ function Main() {
       <h1>React cookies</h1>
       {cookies.user && <p>{cookies.user}</p>}
       <br />
-      <button onClick={cloudLogin}>signin</button>
+      <button onClick={Login}>signin</button>
 
       <br />
-      <button onClick={localSignup}>signout</button>
+      <button onClick={Signup}>signup</button>
 
       <br />
-      <button onClick={cookieRemove}>delete</button>
+      <button onClick={Remove}>delete</button>
     </>
   );
 }
