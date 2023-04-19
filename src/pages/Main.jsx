@@ -21,7 +21,7 @@ const payload = {
   image_type: '',
 };
 
-const url = 'https://api.mydiary.iste/users/';
+const url = 'https://api.mydiary.site/users/';
 const Login = async () => {
   const test = await axios.post(`${url}signin`, payload, {
     withCredentials: true,
