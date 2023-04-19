@@ -37,10 +37,7 @@ const Signup = async () => {
 };
 
 const Remove = async () => {
-  const res = cookies.remove('Refresh', {
-    path: '/',
-    domain: '.mydiary.site',
-  });
+  const res = cookies.remove('Refresh');
   console.log(res);
 };
 function Main() {
