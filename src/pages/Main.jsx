@@ -21,28 +21,21 @@ const payload = {
   image_type: '',
 };
 
+const url = 'https://api.mydiary.iste/users/signin';
 const cloudLogin = async () => {
-  const test = await axios.post(
-    'https://sejdiary.p-e.kr/users/signin',
-    payload,
-    { withCredentials: true }
-  );
+  const test = await axios.post(url, payload, { withCredentials: true });
   console.log(test);
 };
 
 const localSignup = async () => {
-  const test = await axios.post(
-    'https://sejdiary.p-e.kr/users/signout',
-    payload,
-    { withCredentials: true }
-  );
+  const test = await axios.post(url, payload, { withCredentials: true });
   console.log(test);
 };
 
 const cookieRemove = async () => {
   const res = cookies.remove('Refresh', {
     path: '/',
-    domain: 'sejdiary.p-e.kr',
+    domain: 'mydiary.iste',
   });
   console.log(res);
 };
